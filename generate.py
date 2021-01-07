@@ -1,4 +1,4 @@
-    #based on https://github.com/datitran/raccoon_dataset/blob/master/generate_tfrecord.py
+
 
 from __future__ import division
 from __future__ import print_function
@@ -26,16 +26,18 @@ FLAGS = flags.FLAGS
 
 
 def class_text_to_int(row_label):
-    if row_label == 'Raspberry_Pi_3':
+    if row_label == 'Coverall':
         return 1
-    elif row_label == 'Arduino_Nano':
+    elif row_label == 'Face_Shield':
         return 2
-    elif row_label == 'ESP8266':
+    elif row_label == 'Gloves':
         return 3
-    elif row_label == 'Heltec_ESP32_Lora':
+    elif row_label == 'Goggles':
         return 4
+    elif row_label == 'Mask':
+        return 5
     else:
-        return None
+        return 0
 
 
 def split(df, group):
